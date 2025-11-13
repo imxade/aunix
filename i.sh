@@ -222,7 +222,7 @@ MAIN() {
   ## VARIABLES
 
   # new rootfs directory for installation
-  DIR="/tmp/${OS}/"
+  DIR="/${OS}/"
   # directory for grub images
   BOOT="${DIR}boot/grub/"
   # fat mount point
@@ -370,7 +370,7 @@ NIXOS() {
       ${RMD:-canTouchEfiVariables = true;}
     };
  };
- networking.nameservers = [ \"9.9.9.9\" ];
+ networking.networkmanager.enable = true;
  environment.systemPackages = with pkgs; [ ${PKG} ];
  system.stateVersion = \"21.11\"; # Do not modify, before going through the manual.
 }
